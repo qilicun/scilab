@@ -4,17 +4,21 @@ using namespace Eigen;
 using namespace std;
 
 template<typename Derived>
-Eigen::Block<Derived, 2, 2>
+//Eigen::Block<Derived, 2, 2>
+Eigen::Block<Derived>
 topLeft2x2Corner(MatrixBase<Derived>& m)
 {
-  return Eigen::Block<Derived, 2, 2>(m.derived(), 0, 0);
+//  return Eigen::Block<Derived, 2, 2>(m.derived(), 0, 0);
+  return Eigen::Block<Derived>(m.derived(), 0, 0, 2, 2);
 }
 
 template<typename Derived>
-const Eigen::Block<const Derived, 2, 2>
+//const Eigen::Block<const Derived, 2, 2>
+const Eigen::Block<const Derived>
 topLeft2x2Corner(const MatrixBase<Derived>& m)
 {
-  return Eigen::Block<const Derived, 2, 2>(m.derived(), 0, 0);
+//  return Eigen::Block<const Derived, 2, 2>(m.derived(), 0, 0);
+  return Eigen::Block<const Derived>(m.derived(), 0, 0, 2, 2);
 }
 
 int main(int, char**)
