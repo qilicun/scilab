@@ -17,9 +17,12 @@ int main()
    cout << "The solution is:\n" << llt.solve(b) << "\nState: " << llt.info() << endl;
    Matrix2f L = llt.matrixL();
    Matrix2f U = llt.matrixU();
+   Matrix2f l = Matrix2f::Identity();
    cout << "Lower part is:\n" << L << endl;
    cout << "Upperer part is:\n" << U << endl;
-   cout << "LLT part is:\n" << llt.matrixLLT() << endl;
+//   l.block<2,2>(0,0).triangularView<Upper>()=llt.matrixLLT();
+   l.triangularView<Upper>()=llt.matrixLLT();
+   cout << "LLT part is:\n" << l << endl;
    A(1,1)++;
    cout << "The matrix A is now:\n" << A << endl;
    cout << "Computing LLT decomposition..." << endl;
