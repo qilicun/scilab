@@ -15,6 +15,10 @@ int main()
    cout << "Computing LLT decomposition..." << endl;
    llt.compute(A);
    cout << "The solution is:\n" << llt.solve(b) << endl;
+   Matrix2f L = llt.matrixL();
+   Matrix2f U = llt.matrixU();
+   cout << "Lower part is:\n" << L << endl;
+   cout << "Upperer part is:\n" << U << endl;
    A(1,1)++;
    cout << "The matrix A is now:\n" << A << endl;
    cout << "Computing LLT decomposition..." << endl;
