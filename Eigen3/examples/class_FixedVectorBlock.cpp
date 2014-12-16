@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace Eigen;
 using namespace std;
-
+/*
 template<typename Derived>
 Eigen::VectorBlock<Derived, 2>
 firstTwo(MatrixBase<Derived>& v)
@@ -15,6 +15,21 @@ const Eigen::VectorBlock<const Derived, 2>
 firstTwo(const MatrixBase<Derived>& v)
 {
   return Eigen::VectorBlock<const Derived, 2>(v.derived(), 0);
+}
+
+*/
+template<typename Derived>
+Eigen::VectorBlock<Derived>
+firstTwo(MatrixBase<Derived>& v)
+{
+  return Eigen::VectorBlock<Derived>(v.derived(), 0, 2);
+}
+
+template<typename Derived>
+const Eigen::VectorBlock<const Derived>
+firstTwo(const MatrixBase<Derived>& v)
+{
+  return Eigen::VectorBlock<const Derived>(v.derived(), 0, 2);
 }
 
 int main(int, char**)
