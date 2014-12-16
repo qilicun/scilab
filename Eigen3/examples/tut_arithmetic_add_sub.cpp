@@ -16,6 +16,7 @@ int main()
   std::cout << "Doing a += b;" << std::endl;
   a += b;
   std::cout << "Now a =\n" << a << std::endl;
+  std::cout << "a.array()-2\n" << a.array()-2 << std::endl;
   Vector3d v(1,2,3);
   Vector3d w(1,0,0);
   std::cout << "-v + w - v =\n" << -v + w - v << std::endl;
