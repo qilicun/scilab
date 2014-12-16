@@ -14,11 +14,12 @@ int main()
    cout << "Here is the right hand side b:\n" << b << endl;
    cout << "Computing LLT decomposition..." << endl;
    llt.compute(A);
-   cout << "The solution is:\n" << llt.solve(b) << endl;
+   cout << "The solution is:\n" << llt.solve(b) << "\nState: " << llt.info() << endl;
    Matrix2f L = llt.matrixL();
    Matrix2f U = llt.matrixU();
    cout << "Lower part is:\n" << L << endl;
    cout << "Upperer part is:\n" << U << endl;
+   cout << "LLT part is:\n" << llt.matrixLLT() << endl;
    A(1,1)++;
    cout << "The matrix A is now:\n" << A << endl;
    cout << "Computing LLT decomposition..." << endl;
