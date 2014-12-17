@@ -15,6 +15,12 @@ int main()
    cout << "Computing LLT decomposition..." << endl;
    llt.compute(A);
    cout << "The solution is:\n" << llt.solve(b) << "\nState: " << llt.info() << endl;
+   if (llt.info() != Success) {
+        cout << "solve failue!\n";
+        exit(1);
+   } else {
+        cout << "Succeccfully solved!\n";
+   }
    Matrix2f L = llt.matrixL();
    Matrix2f U = llt.matrixU();
    Matrix2f l = Matrix2f::Identity();
